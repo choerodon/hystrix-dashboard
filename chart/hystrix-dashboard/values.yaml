@@ -1,0 +1,54 @@
+# Default values for hystrix-dashboard.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: registry.choerodon.com.cn/choerodon-framework/hystrix-dashboard
+  pullPolicy: Always
+
+preJob:
+  preConfig:
+    configFile: application.yml
+    mysql:
+      host: localhost
+      port: 3306
+      database: manager_service
+      username: choerodon
+      password: 123456
+
+deployment:
+  managementPort: 9001
+
+env:
+  open:
+    JAVA_OPTS: -server -Xmx1024m -Xms1024m -Xss2m -XX:NewSize=768m -XX:MaxNewSize=768m
+    EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://localhost:8000/eureka/
+    SPRING_CLOUD_CONFIG_ENABLED: true
+    SPRING_CLOUD_CONFIG_URI: http://localhost:8010
+
+service:
+  enable: false
+  type: ClusterIP
+  port: 9000
+  name: hystrix-dashboard
+
+metrics:
+  path: /prometheus
+  label: java-spring
+
+logs:
+  parser: java-spring
+
+resources: 
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources,such as Minikube. If you do want to specify resources,uncomment the following
+  # lines,adjust them as necessary,and remove the curly braces after 'resources:'.
+  limits:
+    # cpu: 100m
+    memory: 2Gi
+  requests:
+    # cpu: 100m
+    memory: 1Gi

@@ -1,0 +1,18 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: hystrix-dashboard
+  cloud:
+    config:
+      failFast: true
+      retry:
+        maxAttempts: 6
+        multiplier: 1.5
+        maxInterval: 2000
+      uri: localhost:8010
+      enabled: false
+management:
+  port: 9001
+  security:
+    enabled: false
