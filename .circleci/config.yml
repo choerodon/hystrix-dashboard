@@ -84,6 +84,10 @@ workflows:
           filters:
             tags:
               only: /^.*/
+            branches: 
+              only: 
+                - /^hotfix-.*$/
+                - /^release-.*$/
       - helm_chart_build:
           context: org-global
           requires:
@@ -92,6 +96,10 @@ workflows:
           filters:
             tags:
               only: /^.*/
+            branches: 
+              only: 
+                - /^hotfix-.*$/
+                - /^release-.*$/
   general:
     jobs:
       - maven_test_build:
