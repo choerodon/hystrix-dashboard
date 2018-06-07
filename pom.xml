@@ -9,8 +9,11 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-
     <artifactId>hystrix-dashboard</artifactId>
+
+    <properties>
+        <choerodon.starters.version>0.5.1.RELEASE</choerodon.starters.version>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -29,7 +32,7 @@
         <dependency>
             <groupId>io.choerodon</groupId>
             <artifactId>choerodon-starter-hitoa</artifactId>
-            <version>0.5.0.RELEASE</version>
+            <version>${choerodon.starters.version}</version>
         </dependency>
     </dependencies>
 
