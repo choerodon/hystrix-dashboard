@@ -70,8 +70,5 @@ persistence.enabled | 是否启用持久化存储
 persistence.existingClaim | 绑定的pvc名称
 preJob.preConfig.mysql | 初始化配置所需manager_service数据库信息
 env.open.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE | 注册服务地址
-env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS | kafk地址
-env.open.SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES | zookeeper地址
-EUREKA_CLIENT_SERVICEURL_DEFAULTZONE | http://localhost:8000/eureka/
-SPRING_CLOUD_CONFIG_ENABLED | 启用配置中心
-SPRING_CLOUD_CONFIG_URI | 配置中心地址
+env.open.SPRING_CLOUD_CONFIG_ENABLED | 启用配置中心
+env.open.SPRING_CLOUD_CONFIG_URI | 配置中心地址
