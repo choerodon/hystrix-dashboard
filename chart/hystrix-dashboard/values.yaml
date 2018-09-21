@@ -11,6 +11,7 @@ image:
 preJob:
   image: registry.cn-hangzhou.aliyuncs.com/choerodon-tools/dbtool:0.5.2
   preConfig:
+    enable: true
     configFile: application.yml
     mysql:
       host: localhost
